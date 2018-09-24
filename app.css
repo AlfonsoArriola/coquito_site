@@ -1,0 +1,25 @@
+body {
+  background: #d2e1dd;
+  color: #333;
+  font-family: "Andale Mono", monospace;
+  font-size: 14px; }
+
+.containerIndex {
+  height: 100%;
+  width: 100%;
+  background: #965a3e;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.banner {
+  background: #FFFDD0;
+  padding: 2em;
+  width: 50%;
+  margin: 0em auto 10em;
+  outline: 5px solid #FFFDD0;
+  outline-offset: 5px;
+  text-align: center; }
+
+/*# sourceMappingURL=app.css.map */
