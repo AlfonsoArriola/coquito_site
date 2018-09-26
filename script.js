@@ -22,25 +22,22 @@ window.onload = function () {
   // };
 };
 
-
+// ------------------------------------------------------------------
 
  function myFunction(){
  let x;
   x = document.getElementById('age').value;
 
 if ( x < 21 && x > 0){
-	window.alert('You submitted the age of ' + x +'.  Please come back when you are of legal drinking age.');
-	text = 'Farewell';
+	text = 'You submitted the age of ' + x +'.  Please come back when you are of legal drinking age.';
 }else if (x >= 21 && x <= 123){
-	window.alert('Welcome in!');
+	text = 'Welcome in!';
 	window.location.href = "main.html";
 }else if (x > 123){
-    window.alert('The oldest recorded human was Jeanne Calmet, who died at the age 122, on the year of 1997.  You are most likely NOT older than Jeanne.');
-    text = 'Good Bye';
+    text = 'The oldest recorded human was Jeanne Calmet, who died at the age 122, on the year of 1997.  You are most likely NOT older than Jeanne.';
 }else {
-	window.alert('Plese enter a human age.');
 	text = 'Invalid Input';
 }
-
+    popup.classList.remove("fade-in");
     document.getElementById("greeting_text").innerHTML = text;
 };
