@@ -41,3 +41,17 @@ if ( x < 21 && x > 0){
     popup.classList.remove("fade-in");
     document.getElementById("greeting_text").innerHTML = text;
 };
+
+// +++++++++++++++++++++++++++++++++++++++
+
+window.onscroll = function() {slimScrollGo()};
+
+function slimScrollGo() {
+    if (document.body.scrollTop > 288 || document.documentElement.scrollTop > 288 ){
+        document.getElementById("main_header").style.display = "none";
+        document.getElementById("mini_header").style.display = "block";
+    } else  {
+        document.getElementById("main_header").style.display  = "";
+        document.getElementById("mini_header").style.display = "";  
+    }
+}
