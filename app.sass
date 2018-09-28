@@ -16,7 +16,7 @@ $xmas-green: #4c991a
 
 
 $font-stack: 'Playfair Display', serif
-$font-stack-2: 'Source Serif Pro', serif
+$font-kraken: 'Tangerine', cursive
 $font-size: 1.3 em
 
 
@@ -54,11 +54,8 @@ section
   overflow: hidden
 
 .containerMain
-  // padding-top: 4rem
-  // background-image: url(images/cups_and_lights.jpg)
-  // background-position: center
-  // background-size: cover
-  // background-repeat: no-repeat
+  h2
+    font-family: $font-kraken
 
 #popup
   display: inline-block
@@ -86,16 +83,26 @@ section
   opacity: 1
 
 .slim-header
-  height: 3rem
+  height: 5rem
   width: 100vw
   text-align: center
   background: $black
-  color: $cream
+  color: $smoke
   display: none
   position: fixed
+  font-size: 2em
+  p
+    margin: 1rem 4rem 3rem 4rem
+    font-family: $font-kraken
+
+  p::before, p::after
+    content: url(images/rum-logo.png)
+    margin: 0rem 3rem
+
+
+
 
 .banner 
- 
   background-image: url(images/ink_2.png)
   background-position: center
   background-size: cover
@@ -132,16 +139,21 @@ section
   outline-offset: 5px
   opacity: 0.9
   text-align: center
+  span
+    font-family: $font-kraken
+    font-weight: 550
   h2
     font-size: 1.2em
+    font-weight: 300
+
 
 
 .about
-  padding: 9rem 7rem 
+  padding: 5rem 7rem 
   font-stack: 3em
-  height: 50rem
+  height: 40rem
   line-height: 40px
-  background: $pale
+  background: $black
   // background-image: url(images/barrell.jpg)
   // background-position: center
   // background-size: cover
@@ -154,18 +166,44 @@ section
     float: right
     shape-outside: polygon(40.5% 3px, 92.00% 97.26%, 66.2% 103.37%, 44.02% 87.11%, 15.39% 91.92%, -2.95% 63.6%, -11px 33.55%, 13.08% 10.88%)
 
-
+.conquito_recipes
+  display: grid
+  grid-template-columns: 2fr 1.5fr
+  strong 
+    color: $smoke
+    text-shadow: 2px 2px $black
 
 
 .recipe
   padding: 3rem 
+  outline: 8px solid $smoke
+  outline-offset: -20px
+
+.traditional
+  background-image: url(images/pouring.jpg)
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+.vegan
+  background-image: url(images/coconut_and_cups.jpg)
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
 
 .the-product
-  height: 30rem
-  background: $cream
-  img 
-    height: 20rem
+  height: 35rem
+  padding: 4rem 6rem 3rem 6rem
+  background: $white
+  overflow: hidden
+  color: $black
+  div 
     float: right
+  img 
+    height: 28rem
+    float: left
+    shape-outside: polygon(88.27% 72px, 98.03% 36.77%, 100.35% 91.54%, 60.98% 96.93%, 15.39% 91.92%, 29.42% 2.89%, 251px -4.83%, 86.96% 1.5%)
+ 
 
 .sign-up
   height: 13rem
@@ -176,7 +214,12 @@ section
   overflow: hidden
 
 footer
-  height: 14rem
+  height: 6rem
   background: $cream
   color: $black
+  background-image: url(images/kraken.png)
+  background-position: 95% 5%
+  background-size: cover
+  background-repeat: no-repeat
+  padding: 3rem
   
