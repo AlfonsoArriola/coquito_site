@@ -6,12 +6,18 @@ $black: #333
 $pale: #d2e1dd
 $pink: #c69
 $blue: #036
+$white: #fff
+$smoke:#f5f5f5
 $cream: #FFFDD0
 $coconut: #965a3e
+$warning: #f2f64e
+$xmas-red: #d42426
+$xmas-green: #4c991a
 
 
-$font-stack: 'Andale Mono', monospace
-$font-size: 14px
+$font-stack: 'Playfair Display', serif
+$font-kraken: 'Tangerine', cursive
+$font-size: 1.3 em
 
 
 //mixins
@@ -19,27 +25,201 @@ $font-size: 14px
 
 //styles
 body
-  background: $pale
-  color: $black
+  background: $coconut
+  color: $cream
   font-family: $font-stack
   font-size: $font-size
+  height: 100vh
+  width: 100vw
+  margin: 0 auto
+  padding: 0 auto
+h2
+  font-size: 3em
+
+section
+    text-indent: 50px
 
 .containerIndex
-  height: 100%
-  width: 100%
-  background: $coconut
+  height: 100vh
+  width: 100vw
+  // background: $coconut
   color: $black
   display: flex
   align-items: center
   justify-content: center
+  background-image: url(images/box-and-bottle.jpg)
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  overflow: hidden
+
+.containerMain
+  h2
+    font-family: $font-kraken
+
+#popup
+  display: inline-block
+  opacity: 0
+  position: fixed
+  top: 8%
+  left: 50%
+  padding: 1em
+  transform: translateX(-50%)
+  background: $smoke
+  color: $coconut
+  border: 1px solid #888
+  box-shadow: 1px 1px .5em 0 rgba(0, 0, 0, .5)
+  transition: opacity .3s ease-in-out
+  input
+    color: $coconut
+    text-align: center
+  button
+    color: $coconut
+
+#popup.hidden 
+  display: none
+
+#popup.fade-in 
+  opacity: 1
+
+.slim-header
+  height: 5rem
+  width: 100vw
+  text-align: center
+  background: $black
+  color: $smoke
+  display: none
+  position: fixed
+  font-size: 2em
+  p
+    margin: 1rem 4rem 3rem 4rem
+    font-family: $font-kraken
+
+  p::before, p::after
+    content: url(images/rum-logo.png)
+    margin: 0rem 3rem
+
+
 
 
 .banner 
+  background-image: url(images/ink_2.png)
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  color: $smoke
+  padding: 2em
+  // width: 70%
+  // height: 15rem
+  // margin: 0em auto 10em
+  outline: 8px solid $coconut
+  outline-offset: -20px
+  display: flex
+  align-items: center
+  justify-content: center
+  img 
+    height: 14rem
+
+// .slim
+//   height: 8rem
+//   background: $black
+//   color: $pale
+//   position: fixed
+//   z-index: 99
+//   img
+//     display: none
+
+
+.banner-2
   background: $cream
   padding: 2em
   width: 50%
-  margin: 0em auto 10em
-  outline: 5px solid $cream
+  // margin: 0em auto 10em
+  outline: 5px solid $coconut
   outline-offset: 5px
+  opacity: 0.9
   text-align: center
+  span
+    font-family: $font-kraken
+    font-weight: 550
+  h2
+    font-size: 1.2em
+    font-weight: 300
 
+
+
+.about
+  padding: 5rem 7rem 
+  font-stack: 3em
+  height: 40rem
+  line-height: 40px
+  background: $black
+  // background-image: url(images/barrell.jpg)
+  // background-position: center
+  // background-size: cover
+  // background-repeat: no-repeat
+  overflow: hidden
+  h2
+    text-align: center
+  img 
+    height: 17rem
+    float: right
+    shape-outside: polygon(40.5% 3px, 92.00% 97.26%, 66.2% 103.37%, 44.02% 87.11%, 15.39% 91.92%, -2.95% 63.6%, -11px 33.55%, 13.08% 10.88%)
+
+.conquito_recipes
+  display: grid
+  grid-template-columns: 2fr 1.5fr
+  strong 
+    color: $smoke
+    text-shadow: 2px 2px $black
+
+
+.recipe
+  padding: 3rem 
+  outline: 8px solid $smoke
+  outline-offset: -20px
+
+.traditional
+  background-image: url(images/pouring.jpg)
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+.vegan
+  background-image: url(images/coconut_and_cups.jpg)
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+.the-product
+  height: 35rem
+  padding: 4rem 6rem 3rem 6rem
+  background: $white
+  overflow: hidden
+  color: $black
+  div 
+    float: right
+  img 
+    height: 28rem
+    float: left
+    shape-outside: polygon(88.27% 72px, 98.03% 36.77%, 100.35% 91.54%, 60.98% 96.93%, 15.39% 91.92%, 29.42% 2.89%, 251px -4.83%, 86.96% 1.5%)
+ 
+
+.sign-up
+  height: 13rem
+  background-image: url(images/three_cups.jpg)
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  overflow: hidden
+
+footer
+  height: 6rem
+  background: $cream
+  color: $black
+  background-image: url(images/kraken.png)
+  background-position: 95% 5%
+  background-size: cover
+  background-repeat: no-repeat
+  padding: 3rem
+  
