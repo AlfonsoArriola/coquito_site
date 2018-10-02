@@ -1,7 +1,10 @@
 
 window.onload = function () {
+
+  // for slider on ad
+  printValue('age2', 'rangeValue');
   /* Cache the popup. */
-  var popup = document.getElementById("popup");
+  let popup = document.getElementById("popup");
   
   /* Show the popup. */
   popup.classList.remove("hidden");
@@ -48,10 +51,92 @@ window.onscroll = function() {slimScrollGo()};
 
 function slimScrollGo() {
     if (document.body.scrollTop > 288 || document.documentElement.scrollTop > 288 ){
-        document.getElementById("main_header").style.display = "none";
+        // document.getElementById("main_header").style.display = "none";
         document.getElementById("mini_header").style.display = "block";
     } else  {
-        document.getElementById("main_header").style.display  = "";
+        // document.getElementById("main_header").style.display  = "";
         document.getElementById("mini_header").style.display = "";  
     }
 }
+
+// =================++++++  Ad  ++++++======================
+
+$(document).ready(function(){
+
+    $('.cardGroup.flip').hover(
+        function () {
+          $(this).find('.card').addClass('theFlip');
+        },
+        function () {
+          $(this).find('.card').removeClass('theFlip');     
+        }
+      );
+
+  $('#myCanvas').drawText({
+    layer: true,
+    fillStyle: '#9ef8ff',
+    font: 'bold 32pt Tangerine', 
+    text: 'Get Special Offer Here',
+    x: 100, y: 100,
+    name: 'startLayer',
+    maxWidth: 200
+  });
+  // form submit buttons
+  $('#theButton').click(function(){
+    let theAge2 = $('#age2').val();
+    let thePampering = $('input:radio[name = pamper]:checked').val();
+    localStorage.setItem('age2', theAge2);
+    localStorage.setItem('pamper', thePampering);
+    window.location.href = 'offer.html';
+  })
+
+  //Get items from local storage
+  let storedAge2 = localStorage.getItem('age2');
+  let storedPampering = localStorage.getItem('pamper');
+   let theAction;
+   let theImage;
+   let theImageAlt;
+   let theDiscount = '25% Off'
+   if (storedPampering == 'bath'){
+       theImage = 'images/monkeys.jpeg';
+       theImageAlt = 'Monkeys bathing';
+   } else {
+    theImage = 'images/tanning_bed.jpeg';
+    theImageAlt = 'person in tanning bed'
+   }
+
+   $('#offerImage img').attr({
+      src: theImage,
+      alt: theImageAlt
+   });
+
+
+});
+
+// -----------  Update text field for slider   
+
+function printValue(sliderID, textbox) {
+  let x = document.getElementById(textbox);
+  let y = document.getElementById(sliderID);
+  x.value = y.value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
