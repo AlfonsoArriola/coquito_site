@@ -63,7 +63,10 @@ section {
   color: #f5f5f5;
   display: none;
   position: fixed;
-  font-size: 2em; }
+  font-size: 2em;
+  z-index: 11;
+  top: 0;
+  border-bottom: 1px solid #f5f5f5; }
   .slim-header p {
     margin: 1rem 4rem 3rem 4rem;
     font-family: "Tangerine", cursive; }
@@ -107,7 +110,11 @@ section {
   height: 40rem;
   line-height: 40px;
   background: #333;
-  overflow: hidden; }
+  display: grid;
+  grid-template-columns: 3fr 1fr; }
+  .about strong {
+    color: #f5f5f5;
+    text-shadow: 2px 2px #333; }
   .about h2 {
     text-align: center; }
   .about img {
@@ -140,7 +147,7 @@ section {
   background-repeat: no-repeat; }
 
 .the-product {
-  height: 35rem;
+  height: 37rem;
   padding: 4rem 6rem 3rem 6rem;
   background: #fff;
   overflow: hidden;
@@ -169,5 +176,118 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 3rem; }
+
+.cardGroup {
+  display: block;
+  width: 220px;
+  height: 200px;
+  position: relative;
+  margin-bottom: 30px; }
+
+.card {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.cardGroup img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: block; }
+
+.cardGroup .detail {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; }
+
+label {
+  float: left; }
+
+/*  CSS3 Flip */
+.cardGroup.flip {
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -ms-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px; }
+
+.cardGroup.flip .card {
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -ms-transition: -ms-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+.cardGroup.flip .detail, .cardGroup.flip .theFlip {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg); }
+
+.cardGroup.flip canvas, .cardGroup.flip .detail {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.containerOffer {
+  background: #f5f5f5;
+  color: #333;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; }
+  .containerOffer img {
+    height: 100%;
+    width: 100%; }
+
+.offer_left {
+  padding: 2rem 4rem; }
+
+.offer_right {
+  -webkit-clip-path: circle(50.2% at 65% 64%);
+  clip-path: circle(50.2% at 65% 64%); }
+
+@media screen and (max-width: 800px) {
+  p::before {
+    display: none; }
+
+  .the-product img {
+    height: 20rem; } }
+@media screen and (max-width: 600px) {
+  p::after {
+    display: none; }
+
+  .slim-header {
+    font-size: 1.5em;
+    height: 4rem; }
+
+  .adSide {
+    display: none; }
+
+  .about img {
+    height: 13rem; }
+
+  .conquito_recipes {
+    grid-template-columns: 1fr; }
+
+  .the-product img {
+    height: 17rem; } }
+@media screen and (max-width: 400px) {
+  p::after {
+    display: none; }
+
+  .slim-header {
+    font-size: 1.1em;
+    height: 3rem; } }
 
 /*# sourceMappingURL=app.css.map */

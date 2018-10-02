@@ -91,6 +91,9 @@ section
   display: none
   position: fixed
   font-size: 2em
+  z-index: 11
+  top: 0
+  border-bottom: 1px solid $smoke
   p
     margin: 1rem 4rem 3rem 4rem
     font-family: $font-kraken
@@ -100,8 +103,6 @@ section
     margin: 0rem 3rem
 
 
-
-
 .banner 
   background-image: url(images/ink_2.png)
   background-position: center
@@ -109,9 +110,6 @@ section
   background-repeat: no-repeat
   color: $smoke
   padding: 2em
-  // width: 70%
-  // height: 15rem
-  // margin: 0em auto 10em
   outline: 8px solid $coconut
   outline-offset: -20px
   display: flex
@@ -120,21 +118,11 @@ section
   img 
     height: 14rem
 
-// .slim
-//   height: 8rem
-//   background: $black
-//   color: $pale
-//   position: fixed
-//   z-index: 99
-//   img
-//     display: none
-
 
 .banner-2
   background: $cream
   padding: 2em
   width: 50%
-  // margin: 0em auto 10em
   outline: 5px solid $coconut
   outline-offset: 5px
   opacity: 0.9
@@ -147,24 +135,36 @@ section
     font-weight: 300
 
 
-
 .about
   padding: 5rem 7rem 
   font-stack: 3em
   height: 40rem
   line-height: 40px
   background: $black
-  // background-image: url(images/barrell.jpg)
-  // background-position: center
-  // background-size: cover
-  // background-repeat: no-repeat
-  overflow: hidden
+  display: grid
+  grid-template-columns: 3fr 1fr
+  strong
+    color: $smoke
+    text-shadow: 2px 2px #333
   h2
     text-align: center
   img 
     height: 17rem
     float: right
     shape-outside: polygon(40.5% 3px, 92.00% 97.26%, 66.2% 103.37%, 44.02% 87.11%, 15.39% 91.92%, -2.95% 63.6%, -11px 33.55%, 13.08% 10.88%)
+
+.adSide
+  // padding: 1rem
+  // margin: 0rem 0rem 1rem 2.5rem
+  // a 
+  //   color: $smoke
+
+.detail
+  // color: $white
+  // form
+  //   background-image: radial-gradient(circle, $coconut, $black)
+  //   padding: 1rem .5rem
+  //   border: 1px solid $smoke
 
 .conquito_recipes
   display: grid
@@ -192,7 +192,7 @@ section
   background-repeat: no-repeat
 
 .the-product
-  height: 35rem
+  height: 37rem
   padding: 4rem 6rem 3rem 6rem
   background: $white
   overflow: hidden
@@ -223,3 +223,131 @@ footer
   background-repeat: no-repeat
   padding: 3rem
   
+//    Ad (Flip Card)
+
+.cardGroup 
+  display: block
+  width: 220px
+  height: 200px
+  position: relative
+  margin-bottom: 30px
+
+.card 
+  display: block
+  width: 100%
+  height: 100%
+
+.cardGroup img 
+  width: 100%
+  height: 100%
+  position: absolute
+  display: block
+
+.cardGroup .detail 
+  display: block
+  width: 100%
+  height: 100%
+  position: absolute
+  // background: #fff
+  top: 0
+
+label
+  float: left
+
+/*  CSS3 Flip */  
+.cardGroup.flip 
+  -webkit-perspective: 800px
+  -moz-perspective: 800px
+  -ms-perspective: 800px
+  -o-perspective: 800px
+  perspective: 800px
+
+.cardGroup.flip .card 
+  -webkit-transition: -webkit-transform 1s
+  -moz-transition: -moz-transform 1s
+  -ms-transition: -ms-transform 1s
+  -o-transition: -o-transform 1s
+  transition: transform 1s
+  -webkit-transform-style: preserve-3d
+  -moz-transform-style: preserve-3d
+  -ms-transform-style: preserve-3d
+  -o-transform-style: preserve-3d
+  transform-style: preserve-3d
+
+.cardGroup.flip .detail, .cardGroup.flip .theFlip 
+  -webkit-transform: rotateY(-180deg)
+  -moz-transform: rotateY(-180deg)
+  -ms-transform: rotateY(-180deg)
+  -o-transform: rotateY(-180deg)
+  transform: rotateY(-180deg)
+
+.cardGroup.flip canvas, .cardGroup.flip .detail 
+  -webkit-backface-visibility: hidden
+  -moz-backface-visibility: hidden
+  -ms-backface-visibility: hidden
+  -o-backface-visibility: hidden
+  backface-visibility: hidden
+
+// -------------   Offer  -------------------
+
+.containerOffer
+  background: $smoke
+  color: $black
+  height: 100vh
+  width: 100vw
+  display: grid
+  grid-template-columns: 1fr 1.5fr
+  img
+    height: 100%
+    width: 100%
+
+.offer_left
+  padding: 2rem 4rem
+
+
+.offer_right
+  -webkit-clip-path: circle(50.2% at 65% 64%)
+  clip-path: circle(50.2% at 65% 64%)
+
+// ^^^^^^^^^^^   Media Queries  >>>>>>>>>>>>>>>>>>>>>
+
+@media screen and (max-width: 800px) 
+
+  p::before
+    display: none
+
+  .the-product
+    img
+      height: 20rem
+
+@media screen and (max-width: 600px) 
+
+  p::after
+    display: none
+
+  .slim-header
+    font-size: 1.5em
+    height: 4rem
+
+  .adSide
+    display: none
+  .about
+    img 
+      height: 13rem
+
+  .conquito_recipes
+    grid-template-columns: 1fr
+
+  .the-product
+    img
+      height: 17rem
+
+@media screen and (max-width: 400px) 
+
+  p::after
+    display: none
+
+  .slim-header
+    font-size: 1.1em
+    height: 3rem
+
