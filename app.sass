@@ -143,6 +143,9 @@ section
   background: $black
   display: grid
   grid-template-columns: 3fr 1fr
+  strong
+    color: $smoke
+    text-shadow: 2px 2px #333
   h2
     text-align: center
   img 
@@ -151,19 +154,17 @@ section
     shape-outside: polygon(40.5% 3px, 92.00% 97.26%, 66.2% 103.37%, 44.02% 87.11%, 15.39% 91.92%, -2.95% 63.6%, -11px 33.55%, 13.08% 10.88%)
 
 .adSide
-  padding: 1rem
-  margin: 0rem 0rem 1rem 2.5rem
-  a 
-    color: $smoke
+  // padding: 1rem
+  // margin: 0rem 0rem 1rem 2.5rem
+  // a 
+  //   color: $smoke
 
 .detail
-  color: $white
-  form
-    background-image: radial-gradient(circle, $coconut, $black)
-    padding: 1rem .5rem
-    border: 1px solid $smoke
-
-
+  // color: $white
+  // form
+  //   background-image: radial-gradient(circle, $coconut, $black)
+  //   padding: 1rem .5rem
+  //   border: 1px solid $smoke
 
 .conquito_recipes
   display: grid
@@ -223,7 +224,6 @@ footer
   padding: 3rem
   
 //    Ad (Flip Card)
-
 
 .cardGroup 
   display: block
@@ -309,10 +309,45 @@ label
   -webkit-clip-path: circle(50.2% at 65% 64%)
   clip-path: circle(50.2% at 65% 64%)
 
+// ^^^^^^^^^^^   Media Queries  >>>>>>>>>>>>>>>>>>>>>
 
+@media screen and (max-width: 800px) 
 
+  p::before
+    display: none
 
+  .the-product
+    img
+      height: 20rem
 
+@media screen and (max-width: 600px) 
 
+  p::after
+    display: none
 
+  .slim-header
+    font-size: 1.5em
+    height: 4rem
+
+  .adSide
+    display: none
+  .about
+    img 
+      height: 13rem
+
+  .conquito_recipes
+    grid-template-columns: 1fr
+
+  .the-product
+    img
+      height: 17rem
+
+@media screen and (max-width: 400px) 
+
+  p::after
+    display: none
+
+  .slim-header
+    font-size: 1.1em
+    height: 3rem
 

@@ -112,25 +112,15 @@ section {
   background: #333;
   display: grid;
   grid-template-columns: 3fr 1fr; }
+  .about strong {
+    color: #f5f5f5;
+    text-shadow: 2px 2px #333; }
   .about h2 {
     text-align: center; }
   .about img {
     height: 17rem;
     float: right;
     shape-outside: polygon(40.5% 3px, 92% 97.26%, 66.2% 103.37%, 44.02% 87.11%, 15.39% 91.92%, -2.95% 63.6%, -11px 33.55%, 13.08% 10.88%); }
-
-.adSide {
-  padding: 1rem;
-  margin: 0rem 0rem 1rem 2.5rem; }
-  .adSide a {
-    color: #f5f5f5; }
-
-.detail {
-  color: #fff; }
-  .detail form {
-    background-image: radial-gradient(circle, #965a3e, #333);
-    padding: 1rem 0.5rem;
-    border: 1px solid #f5f5f5; }
 
 .conquito_recipes {
   display: grid;
@@ -266,5 +256,38 @@ label {
 .offer_right {
   -webkit-clip-path: circle(50.2% at 65% 64%);
   clip-path: circle(50.2% at 65% 64%); }
+
+@media screen and (max-width: 800px) {
+  p::before {
+    display: none; }
+
+  .the-product img {
+    height: 20rem; } }
+@media screen and (max-width: 600px) {
+  p::after {
+    display: none; }
+
+  .slim-header {
+    font-size: 1.5em;
+    height: 4rem; }
+
+  .adSide {
+    display: none; }
+
+  .about img {
+    height: 13rem; }
+
+  .conquito_recipes {
+    grid-template-columns: 1fr; }
+
+  .the-product img {
+    height: 17rem; } }
+@media screen and (max-width: 400px) {
+  p::after {
+    display: none; }
+
+  .slim-header {
+    font-size: 1.1em;
+    height: 3rem; } }
 
 /*# sourceMappingURL=app.css.map */
